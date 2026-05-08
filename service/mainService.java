@@ -16,6 +16,9 @@ public class mainService {
 			bStForInt.add(57);
 			bStForInt.print();
 			
+			System.out.println("vai koka ir 88? "+ bStForInt.findElement(88));
+			System.out.println("Vai ir 10? "+ bStForInt.findElement(10));
+			
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
