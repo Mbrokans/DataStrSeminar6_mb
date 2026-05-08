@@ -96,5 +96,40 @@ public class MyBST <Ttype>{
 			}
 		}
 	}
+	public boolean findElement(Ttype element) throws Exception{
+		if(element== null) {
+			throw new Exception("nepareizi dati");
+		}
+		if(isEmpty()) {
+			throw new Exception("BST ir tukss");
+		}
+		return findElementHelper(element, root);
+	}
+	private boolean findElementHelper(Ttype element, MyNode nodeTemp) {
+		Ttype elementCompare = (Ttype) nodeTemp.getElement();
+		if(element.equals(elementCompare)) {
+			return true;
+		}else {
+		if (((Comparable) element).compareTo(elementCompare) > 0) {
+			if(nodeTemp.getRightChildNode()==null) {
+				return false;
+			}
+			else {
+				return findElementHelper(element,nodeTemp.getRightChildNode());
+				}
+			}
+		else {
+			if(nodeTemp.getLeftChildNode()==null) {
+				return false;
+			}
+			else {
+				return findElementHelper(element, nodeTemp.getLeftChildNode());
+			}
+			}
+		
+	}
+	}
+	
+	
 
 }
